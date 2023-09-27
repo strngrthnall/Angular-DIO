@@ -5,7 +5,8 @@ import {
 	AfterContentChecked,
 	AfterContentInit,
 	AfterViewChecked,
-	AfterViewInit
+	AfterViewInit,
+	OnDestroy
 	} from '@angular/core';
 
 @Component({
@@ -19,29 +20,50 @@ implements OnInit,
 	AfterContentChecked,
 	AfterContentInit,
 	AfterViewChecked,
-	AfterViewInit {
+	AfterViewInit,
+	OnDestroy {
+
+	quantidade: number = 0
 
   constructor() { }
+
+	adicionar(){
+		this.quantidade += 1
+	}
+
+	decrementar() {
+		this.quantidade -= 1
+	}
+
+	//check -> content -> View
+
+	ngOnInit(): void {
+		console.log('ngOnOInit')
+	}
+
 	ngDoCheck(): void {
 		console.log('ngDoCheck');
 	}
+
 	ngAfterContentChecked(): void {
 		console.log('ngAfterContentCheck');
 	}
+
 	ngAfterContentInit(): void {
 		console.log('ngAfterContentInit');
 	}
+
 	ngAfterViewChecked(): void {
 		console.log('ngAfterViewChecked');
 	}
+
 	ngAfterViewInit(): void {
 		console.log('ngAfeterViewInit');
 	}
 
-  ngOnInit(): void {
-		console.log('ngOnOInit')
-  }
-
+	ngOnDestroy(): void {
+		console.log('ngOnDestroy')
+	}
 
 
 }
