@@ -1,0 +1,11 @@
+.enable {
+  color: blue;
+}
+
+.disable {
+  color: red;
+}
+
+li:hover {
+  cursor: pointer;
+}
